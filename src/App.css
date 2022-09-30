@@ -1,0 +1,15 @@
+:root {
+    --blue: hsl(240, 100%, 50%);
+    --lighter-blue: hsl(200, 100%, 30%);
+    --light-blue: hsl(200, 100%, 65%);
+    --red: hsl(0, 100%, 50%);
+    --light-red: hsl(0, 100%, 90%);
+    --gray: #777;
+    --dark-gray: #333;
+    --light-gray: #CCC;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Finlandica', sans-serif;
+}

@@ -1,0 +1,160 @@
+.container {
+    position: relative;
+    width: 19em;
+    min-height: 2.75em;
+    border: .05em solid var(--gray);
+    border-radius: .25em;
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    padding: .5em;
+    outline: none;
+    transition: all .1s;
+}
+
+.container:focus {
+    box-shadow: 0 0 0 0.1em var(--blue);
+    border-color: var(--blue);
+}
+.container:focus .caret,
+.caret:focus {
+    border-top-color: var(--blue);
+}
+
+.value {
+    display: flex;
+    gap: .5em;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.clear-btn {
+    background: none;
+    color: var(--gray);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.25em;
+}
+
+.clear-btn:focus,
+.clear-btn:hover {
+    color: var(--dark-gray);
+}
+
+.divider {
+    background-color: var(--gray);
+    align-self: stretch;
+    width: .05em;
+}
+
+.caret {
+    translate: 0 25%;
+    border: .25em solid transparent;
+    border-top-color: var(--gray);
+}
+
+.options-wrapper {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25em);
+    z-index: 100;
+}
+.options-wrapper.show {
+    display: block;
+}
+
+@keyframes showSelectOptions {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        translate: 0 .5em;
+    }
+}
+
+.options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: 15em;
+    overflow-y: auto;
+    border: .05em solid var(--gray);
+    border-radius: 0.25em;
+    background-color: #fff;
+}
+
+.options-wrapper.show > * {
+    animation: showSelectOptions .3s forwards;
+}
+
+.options-wrapper.show .options::-webkit-scrollbar {
+    width: .4em;
+    padding-inline: 1em;
+    border-left: 1px solid var(--light-gray);
+}
+
+.options-wrapper.show .options::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: .3em;
+}
+
+.option {
+    padding: .5em;
+    cursor: pointer;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.option.selected {
+    background-color: var(--light-blue);
+}
+
+.option.highlighted {
+    background-color: var(--blue);
+    color: white;
+}
+
+.option-badge-btn {
+    display: flex;
+    align-items: center;
+    border: .05em solid var(--gray);
+    border-radius: .25em;
+    padding: .15em .25em;
+    gap: .25em;
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+
+.option-badge-btn:hover,
+.option-badge-btn:focus {
+    border-color: var(--red);
+}
+
+.option-badge-btn:hover > .remove-btn,
+.option-badge-btn:focus > .remove-btn{
+    color: var(--red);
+}
+
+.option-badge-btn > .remove-btn {
+    font-size: 1.25em;
+    color: var(--gray);
+}
+
+.filter-input {
+    font-size: 1rem;
+    width: 100%;
+    min-height: 1.5em;
+    border: .05em solid var(--gray);
+    border-radius: .25em;
+    padding: .5em;
+    outline: none;
+}
+
+.filter-input__mb {
+    margin-bottom: .5em;
+}
